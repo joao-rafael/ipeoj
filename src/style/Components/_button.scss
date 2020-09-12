@@ -1,0 +1,9 @@
+.button {
+    font-family: $roboto;
+
+    &.-default {
+        color: $color10;
+        background-color: $color25;
+        border-radius: 10px;
+    }
+}

@@ -1,5 +1,7 @@
 import React from "react";
 
+import './style/index.scss';
+
 export const App = props => {
     return (
         <div>

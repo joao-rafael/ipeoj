@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    font-family: $roboto;
+    
+    > div {
+        margin-top: 0;
+    }
+}
