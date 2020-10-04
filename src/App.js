@@ -1,12 +1,15 @@
 import React from "react";
+import Home from './pages/Home';
 
 import './style/index.scss';
 
-export const App = props => {
+
+export const App = () => {
     return (
         <div>
             <div className="container">
-                <h1>Hello Parcel, {props.name} </h1>
+                <Home>
+                </Home>
             </div>
         </div>
     );

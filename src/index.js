@@ -12,7 +12,7 @@ const greet = () => {
 greet();
 ReactDOM.render(
     <React.StrictMode>
-      <App name='João'/>
+      <App/>
     </React.StrictMode>,
     document.getElementById('root')
 );
