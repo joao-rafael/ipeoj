@@ -1,4 +1,16 @@
 .section {
     position: relative;
     width: 100%;
+
+    &.-home {
+        margin-top: 20px;
+
+        .s-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            
+        }
+    }
 }

@@ -7,7 +7,7 @@ import './style/index.scss';
 export const App = () => {
     return (
         <div>
-            <div className="container">
+            <div>
                 <Home>
                 </Home>
             </div>

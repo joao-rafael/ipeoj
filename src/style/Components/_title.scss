@@ -1,0 +1,10 @@
+.title {
+    font-family: $roboto;
+    color: $color20;
+
+    &.-main {
+        font-size: $f-s10;
+        line-height: 84px;
+        font-weight: bold;
+    }
+}
