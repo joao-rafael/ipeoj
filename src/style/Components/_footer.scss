@@ -1,4 +1,21 @@
 .footer {
     position: relative;
     width: 100%;
+
+    &.-copyright {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        background-color: $color35;
+        color: $color36;
+        height: 60px;
+
+        p {
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+    }
 }

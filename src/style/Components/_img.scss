@@ -1,4 +1,9 @@
 .img {
-    object-fit: cover;
+
+    &.-index {
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
     
 }
