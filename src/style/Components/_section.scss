@@ -18,4 +18,18 @@
         padding-top: 50px;
         background-color: $color13;
     }
+
+    &.-question {
+        padding-top: 50px;
+
+        .s-paragraph {
+
+        }
+
+        .s-code {
+            width: 100%;
+            padding: 20px;
+            background-color: $color13;
+        }
+    }
 }

@@ -7,4 +7,20 @@
         line-height: 60px;
         font-weight: bold;
     }
+
+
+    &.-question {
+        margin-top: 0;
+        font-size: $f-s9;
+    }
+
+    &.-sub {
+        font-size: $f-s5;
+        font-weight: bold;
+    }
+
+    &.-send {
+        font-size: $f-s5;
+    }
+
 }

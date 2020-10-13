@@ -1,0 +1,30 @@
+.sendzone {
+    margin: 50px 0px 0px 0px;
+    .s-title {
+        font-size: $f-s5;
+    }
+
+    .s-box {
+        width: 100%;
+        padding: 20px;
+        border-radius: 14px;
+        border: 5px solid dashed red;
+        background-color: $color15;
+    
+        p {
+            text-align: center;
+            color: $color16;
+            font-weight: 600;
+            margin-bottom: 0px;
+        }
+    }
+
+    a {
+        font-size: $f-s3;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto 0px auto;
+        text-align: center;
+        font-weight: bold;
+    }
+}
