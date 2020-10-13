@@ -19,6 +19,8 @@
     "lint": "eslint \"src/**/*.{js, jsx}\" --quiet"
   },
   "devDependencies": {
+    "@mdx-js/parcel-plugin-mdx": "^1.6.18",
+    "@mdx-js/react": "^2.0.0-next.8",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
