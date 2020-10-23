@@ -15,7 +15,20 @@ const request = {
     }
 };
 
+
+
 const Question = () => {
+    const [submission, setSubmission] = React.useState('');
+    const [response, setResponse] = React.useState('');
+
+    const submit = () => {
+        axios.request(request).then(response => {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }
+    
     return (
         <QuestionLayout>
 
@@ -83,9 +96,6 @@ const Question = () => {
                                 </p>    
                             </div>
                         </Col>
-                    </Row>
-                    <Row>
-                        
                     </Row>
                 </Container>
             </section>
