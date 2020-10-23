@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import QuestionLayout from '../layouts/QuestionLayout';
+import axios from 'axios';
 import { Container, Row, Col } from 'react-bootstrap';
 //import Question1 from './../content/questions/Question-1.mdx';
 
-const Home = () => {
+const apiKey = `${process.env.API_KEY}`;
+
+const request = {
+    method: 'GET',
+    url: 'https://rapidapi.p.rapidapi.com/languages',
+    headers: {
+      'x-rapidapi-host': 'judge0.p.rapidapi.com',
+      'x-rapidapi-key': apiKey
+    }
+};
+
+const Question = () => {
     return (
         <QuestionLayout>
 
             <section className='section -question'>
                 <Container>
-                    <Row>
-                        <Col lg={12} className='s-col'>
+                    <Row >
+                        <Col lg={6} className='s-col'>
                            <h2 className='title -sub'>
                                 Questão 1
                            </h2>
@@ -44,10 +56,11 @@ const Home = () => {
                                 et scelerisque ornare. Vestibulum rhoncus justo in 
                                 ligula porta porttitor. 
                            </p>
+                            <a>
+                                voltar
+                            </a>
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col>
+                        <Col lg={5} className='offset-1'>
                             <div className='sendzone'>
                                 <h2 className='s-title'>
                                     Área de envio:
@@ -57,11 +70,22 @@ const Home = () => {
                                         arraste sua submissão aqui
                                     </p>
                                 </div>
-                                <a>
-                                    voltar
-                                </a>
+                                <button>
+                                    Submeter
+                                </button>
+                            </div>
+                            <div className='results'>
+                                <h2>
+                                    Resultados:
+                                </h2>
+                                <p className='r-status'>
+                                    Aguardando Submissão
+                                </p>    
                             </div>
                         </Col>
+                    </Row>
+                    <Row>
+                        
                     </Row>
                 </Container>
             </section>
@@ -70,4 +94,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Question;
