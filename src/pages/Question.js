@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import QuestionLayout from '../layouts/QuestionLayout';
 import axios from 'axios';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 //import Question1 from './../content/questions/Question-1.mdx';
 
 const apiKey = `${process.env.API_KEY}`;
@@ -16,10 +17,18 @@ const request = {
 };
 
 
-
+/**
+ * lang ids:
+ *  C - 75
+ *  C++ - 76
+ *  Java - 62
+ *  JavaScript - 63
+ *  Python 3 - 71
+ */
 const Question = () => {
+    const [lang, setLang] = React.useState('71');
     const [submission, setSubmission] = React.useState('');
-    const [response, setResponse] = React.useState('');
+    const [response, setResponse] = React.useState('Aguardando por envio');
 
     const submit = () => {
         axios.request(request).then(response => {
@@ -29,6 +38,16 @@ const Question = () => {
         });
     }
     
+    const test = () => {
+        console.log('sent');
+    }
+
+    const handleChange = e => {
+        setLang(e.target.value);
+        console.log(lang);
+    }
+
+
     return (
         <QuestionLayout>
 
@@ -69,11 +88,17 @@ const Question = () => {
                                 et scelerisque ornare. Vestibulum rhoncus justo in 
                                 ligula porta porttitor. 
                            </p>
-                            <a>
-                                voltar
-                            </a>
+                           <Link to='/dashboard'> Voltar</Link>
+                            
                         </Col>
                         <Col lg={5} className='offset-1'>
+                            <select name="lang" id="lang" onChange={handleChange}>
+                                <option value="71">Python</option>
+                                <option value="75">C Lang</option>
+                                <option value="76">C++</option>
+                                <option value="62">Java</option>
+                                <option value="63">JavaScript</option>
+                            </select>
                             <div className='sendzone'>
                                 <h2 className='s-title'>
                                     Área de envio:
@@ -83,7 +108,7 @@ const Question = () => {
                                         arraste sua submissão aqui
                                     </p>
                                 </div>
-                                <button>
+                                <button onClick={submit}>
                                     Submeter
                                 </button>
                             </div>
@@ -92,7 +117,7 @@ const Question = () => {
                                     Resultados:
                                 </h2>
                                 <p className='r-status'>
-                                    Aguardando Submissão
+                                    {response}
                                 </p>    
                             </div>
                         </Col>

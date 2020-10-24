@@ -1,6 +1,7 @@
 import React from 'react';
 import DefaultLayout from './../layouts/DefaultLayout';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import indexImg from '../assets/img/index.svg';
 
@@ -22,9 +23,12 @@ const Home = () => {
                                 Unipê, utulizado para realização de provas e, 
                                 futuramente, competições de programação.
                             </p>
-                            <button className='link -primary'>
-                                Acesse a versão de testes
-                            </button>
+                            <Link to='/dashboard'>
+                                <button className='link -primary'>
+                                    Acesse a versão de testes
+                                </button>
+                            </Link>
+                            
                         </Col>
                         <Col lg={6} className='s-col'>
                             <picture className='picture'>
