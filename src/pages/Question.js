@@ -7,16 +7,6 @@ import { Link } from 'react-router-dom';
 
 const apiKey = `${process.env.API_KEY}`;
 
-const request = {
-    method: 'GET',
-    url: 'https://rapidapi.p.rapidapi.com/languages',
-    headers: {
-      'x-rapidapi-host': 'judge0.p.rapidapi.com',
-      'x-rapidapi-key': apiKey
-    }
-};
-
-
 /**
  * lang ids:
  *  C - 75
@@ -27,11 +17,35 @@ const request = {
  */
 const Question = () => {
     const [lang, setLang] = React.useState('71');
-    const [submission, setSubmission] = React.useState('');
+    const [code, setCode] = React.useState('');
     const [response, setResponse] = React.useState('Aguardando por envio');
 
+    const submission = {
+        method: 'POST',
+        url: 'https://judge0.p.rapidapi.com/submissions',
+        headers: {
+            'x-rapidapi-host': 'judge0.p.rapidapi.com',
+            'x-rapidapi-key': apiKey,
+            'content-type': 'application/json',
+            accept : 'application/json'
+        },
+        body: {
+            'language_id': `${lang}`,
+            'source_code': `${code}`,
+        }
+    };
+
+    const request = {
+        method: 'GET',
+        url: 'https://rapidapi.p.rapidapi.com/languages',
+        headers: {
+          'x-rapidapi-host': 'judge0.p.rapidapi.com',
+          'x-rapidapi-key': apiKey
+        }
+    };
+
     const submit = () => {
-        axios.request(request).then(response => {
+        axios.request(submission).then(response => {
             console.log(response.data);
         }).catch(function (error) {
             console.error(error);
@@ -47,6 +61,10 @@ const Question = () => {
         console.log(lang);
     }
 
+    const updateCode= e => {
+        setCode(e.target.value);
+        console.log(code);
+    }
 
     return (
         <QuestionLayout>
@@ -104,9 +122,9 @@ const Question = () => {
                                     Área de envio:
                                 </h2>
                                 <div className='s-box'>
-                                    <p>
-                                        arraste sua submissão aqui
-                                    </p>
+                                    <textarea className='s-input' onChange={updateCode}>
+
+                                    </textarea>
                                 </div>
                                 <button onClick={submit}>
                                     Submeter

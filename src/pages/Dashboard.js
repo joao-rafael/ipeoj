@@ -1,6 +1,7 @@
 import React from 'react';
 import DefaultLayout from './../layouts/DefaultLayout';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
@@ -17,14 +18,16 @@ const Dashboard = () => {
                     </Row>
                     <Row>
                         <Col>
-                            <div className='card -item'>
-                                <h2>
-                                    Prova Teste
-                                </h2>
-                                <p>
-                                    Acesse a prova teste do sistema
-                                </p>
-                            </div>
+                            <Link to='/question'>
+                                <div className='card -item'>
+                                    <h2>
+                                        Prova Teste
+                                    </h2>
+                                    <p>
+                                        Acesse a prova teste do sistema
+                                    </p>
+                                </div>
+                            </Link> 
                             <div className='card -item'>
                                 <h2>
                                     Questão Teste

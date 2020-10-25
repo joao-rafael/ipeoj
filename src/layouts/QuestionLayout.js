@@ -8,15 +8,7 @@ const Question = ({ children }) => {
         <div>
             <Header/>
             <main>
-                <Container>
-                    <Row>
-                        <Col>
-                            {children}
-                        </Col>
-                    </Row>
-                </Container>
-
-                
+                {children}
             </main>
             <Footer/>
         </div>
