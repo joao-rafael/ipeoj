@@ -22,14 +22,14 @@ const Question = () => {
 
     const submission = {
         method: 'POST',
-        url: 'https://judge0.p.rapidapi.com/submissions',
+        url: 'https://rapidapi.p.rapidapi.com/submissions',
         headers: {
             'x-rapidapi-host': 'judge0.p.rapidapi.com',
             'x-rapidapi-key': apiKey,
             'content-type': 'application/json',
-            accept : 'application/json'
+            'accept' : 'application/json'
         },
-        body: {
+        data: {
             'language_id': `${lang}`,
             'source_code': `${code}`,
         }
