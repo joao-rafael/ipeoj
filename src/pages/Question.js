@@ -16,9 +16,18 @@ const apiKey = `${process.env.API_KEY}`;
  *  Python 3 - 71
  */
 const Question = () => {
+    let resData = '';
     const [lang, setLang] = React.useState('71');
     const [code, setCode] = React.useState('');
-    const [response, setResponse] = React.useState('Aguardando por envio');
+    const [token, setToken] = React.useState('');
+    const [results, setResults] = React.useState('');
+
+    useEffect(() => {         
+        if (token.length) {
+            console.log(token);
+            setTimeout(() => getResult(),10000);
+        }
+    },[token]);
 
     const submission = {
         method: 'POST',
@@ -44,8 +53,25 @@ const Question = () => {
         }
     };
 
+    const getSubmission =  {
+        method: 'GET',
+        url: `https://judge0.p.rapidapi.com/submissions/${token}`,
+        headers: {
+            'x-rapidapi-host': 'judge0.p.rapidapi.com',
+            'x-rapidapi-key': apiKey
+        },
+    }
+
     const submit = () => {
         axios.request(submission).then(response => {
+            setToken(response.data.token);
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }
+
+    const getResult = () => {
+        axios.request(getSubmission).then(response => {
             console.log(response.data);
         }).catch(function (error) {
             console.error(error);
@@ -135,7 +161,9 @@ const Question = () => {
                                     Resultados:
                                 </h2>
                                 <p className='r-status'>
-                                    {response}
+                                    {
+                                        results.length ?   results : 'Aguardando por envio'
+                                    }
                                 </p>    
                             </div>
                         </Col>
