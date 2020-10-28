@@ -23,7 +23,7 @@ const Home = () => {
                                 Unipê, utulizado para realização de provas e, 
                                 futuramente, competições de programação.
                             </p>
-                            <Link to='/dashboard'>
+                            <Link to='/dashboard' className='link -default'>
                                 <button className='link -primary'>
                                     Acesse a versão de testes
                                 </button>

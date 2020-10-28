@@ -18,7 +18,7 @@ const Dashboard = () => {
                     </Row>
                     <Row>
                         <Col>
-                            <Link to='/question'>
+                            <Link to='/question' className='link -default'>
                                 <div className='card -item'>
                                     <h2>
                                         Prova Teste

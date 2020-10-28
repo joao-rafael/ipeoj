@@ -13,4 +13,8 @@
         font-weight: 500;
         cursor: pointer;
     }
+
+    &.-default {
+        text-decoration: none;
+    }
 }

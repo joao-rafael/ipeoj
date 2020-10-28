@@ -2,4 +2,14 @@
     margin-top: 50px;
     padding: 20px;
     background-color: $color13;
+
+    .r-list {
+        list-style-type: none;
+        padding: none;
+
+        .r-info {
+            font-weight: bold;
+            color: $color16;
+        }
+    }   
 }

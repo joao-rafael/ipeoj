@@ -72,7 +72,7 @@ const Question = () => {
 
     const getResult = () => {
         axios.request(getSubmission).then(response => {
-            console.log(response.data);
+            setResults(response.data);
         }).catch(function (error) {
             console.error(error);
         });
@@ -160,11 +160,32 @@ const Question = () => {
                                 <h2>
                                     Resultados:
                                 </h2>
-                                <p className='r-status'>
-                                    {
-                                        results.length ?   results : 'Aguardando por envio'
-                                    }
-                                </p>    
+                                {
+                                    results.length === 0 ?  
+                                        <p className='r-advice'>
+                                            Aguardando submissão
+                                        </p>
+                                    :   
+                                        <ul className='r-list'>
+                                            {Object.keys(results).map((obj, i) => {
+                                                return (
+                                                    <li className='r-info' key={i}>
+                                                        {obj}: {i}
+                                                    </li> 
+                                                )
+                                            })}
+                                        </ul>
+                                        /**
+                                            memory: 3408
+                                            message: null
+                                            status: {id: 3, description: "Accepted"}
+                                            stderr: null
+                                            stdout: "hello world↵"
+                                            time: "0.021"
+                                            token: "02db66c0-4aee-401c-ba32-a8f96366b47d"
+                                            __proto__: Object
+                                        */
+                                }
                             </div>
                         </Col>
                     </Row>
