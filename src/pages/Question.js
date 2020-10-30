@@ -16,6 +16,7 @@ const apiKey = `${process.env.API_KEY}`;
  *  Python 3 - 71
  */
 const Question = () => {
+    const rProps = ['Memória:', 'Mensagem:', 'Status:', 'Stderr:', 'Saída:', 'Tempo de Execução:'];
     let resData = '';
     const [lang, setLang] = React.useState('71');
     const [code, setCode] = React.useState('');
@@ -72,6 +73,7 @@ const Question = () => {
 
     const getResult = () => {
         axios.request(getSubmission).then(response => {
+            console.log(response.data);
             setResults(response.data);
         }).catch(function (error) {
             console.error(error);
@@ -166,15 +168,25 @@ const Question = () => {
                                             Aguardando submissão
                                         </p>
                                     :   
-                                        <ul className='r-list'>
-                                            {Object.keys(results).map((obj, i) => {
-                                                return (
-                                                    <li className='r-info' key={i}>
-                                                        {obj}: {i}
-                                                    </li> 
-                                                )
-                                            })}
-                                        </ul>
+                                        <div>
+                                            <ul>
+                                                <li >
+                                                    Memória: {results.memory}
+                                                </li>
+                                                <li >
+                                                    Tempo de Execução: {results.time}
+                                                </li>
+                                                <li >
+                                                    Saída: {results.stdout}
+                                                </li>
+                                                <li >
+                                                    Status: {results.status.description}
+                                                </li>
+                                                <li>
+                                                    Mensagem: {results.message}
+                                                </li>
+                                            </ul>
+                                        </div>
                                         /**
                                             memory: 3408
                                             message: null
