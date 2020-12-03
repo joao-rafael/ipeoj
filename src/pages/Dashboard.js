@@ -21,29 +21,33 @@ const Dashboard = () => {
                             <Link to='/question' className='link -default'>
                                 <div className='card -item'>
                                     <h2>
-                                        Prova Teste
+                                        Questão 1
                                     </h2>
                                     <p>
                                         Acesse a prova teste do sistema
                                     </p>
                                 </div>
                             </Link> 
-                            <div className='card -item'>
-                                <h2>
-                                    Questão Teste
-                                </h2>
-                                <p>
-                                    Acesse a prova teste do sistema
-                                </p>
-                            </div>
-                            <div className='card -item'>
-                                <h2>
-                                    Documentação
-                                </h2>
-                                <p>
-                                    Acesse a prova teste do sistema
-                                </p>
-                            </div>
+                            <Link to='/question2' className='link -default'>
+                                <div className='card -item'>
+                                    <h2>
+                                    Questão 2
+                                    </h2>
+                                    <p>
+                                        Acesse a prova teste do sistema
+                                    </p>
+                                </div>
+                            </Link> 
+                            <Link to='/question3' className='link -default'>
+                                <div className='card -item'>
+                                    <h2>
+                                    Questão 3
+                                    </h2>
+                                    <p>
+                                        Acesse a prova teste do sistema
+                                    </p>
+                                </div>
+                            </Link> 
                         </Col>
                     </Row>
                 </Container>

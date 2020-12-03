@@ -42,7 +42,8 @@ const Question = () => {
         data: {
             'language_id': `${lang}`,
             'source_code': `${code}`,
-            'expected_output': 'Hello World!',
+            'stdin': '4',
+            'expected_output': '4 ao quadrado é: 16',
         }
     };
 
@@ -97,29 +98,27 @@ const Question = () => {
 
     return (
         <QuestionLayout>
-
             <section className='section -question'>
                 <Container>
                     <Row >
                         <Col lg={6} className='s-col'>
                            <h2 className='title -sub'>
-                                Questão 1
+                                Questão 3
                            </h2>
                            <h1 className='title -question'>
-                               Hello World!
+                               Ao Quadrado
                            </h1>
                            <p className='s-paragraph'>
-                                A questão mais clássica de sempre: escreva um programa
-                                que exiba a frase 'Hello World!';
+                                Nessa questão, seu programa deverá receber um número qualquer X
+                                e deverá retornar a mensagem: 'X ao quadrado é igual a: Y', em que Y
+                                deverá ser o quadrado do número X.
                            </p>
                            <pre className='s-code'>
+                                // Entrada: <br></br>
+                                4 <br></br>
                                 // Saída esperada: <br></br>
-                                Hello World!
+                                4 ao quadrado é: 16
                             </pre> 
-                            <p className='s-paragraph'>
-                                Lembre-se de atentar para os caracteres, pois a saída precisa ser
-                                exatamente igual.
-                           </p>
                            <Link to='/dashboard'> Voltar</Link>
                             
                         </Col>

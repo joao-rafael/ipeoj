@@ -42,7 +42,8 @@ const Question = () => {
         data: {
             'language_id': `${lang}`,
             'source_code': `${code}`,
-            'expected_output': 'Hello World!',
+            'stdin': 'Judge0',
+            'expected_output': 'hello, Judge0.',
         }
     };
 
@@ -97,29 +98,27 @@ const Question = () => {
 
     return (
         <QuestionLayout>
-
             <section className='section -question'>
                 <Container>
                     <Row >
                         <Col lg={6} className='s-col'>
                            <h2 className='title -sub'>
-                                Questão 1
+                                Questão 2
                            </h2>
                            <h1 className='title -question'>
-                               Hello World!
+                               Entrada Básica
                            </h1>
                            <p className='s-paragraph'>
-                                A questão mais clássica de sempre: escreva um programa
-                                que exiba a frase 'Hello World!';
+                                Nessa questão, você deverá repetir o procedimento da questão passada,
+                                contudo, desta vez deverá exibir a mensagem 'Hello, X.' em que X deverá ser
+                                um valor lido por seu programa.
                            </p>
                            <pre className='s-code'>
+                                // Entrada: <br></br>
+                                rafael <br></br>
                                 // Saída esperada: <br></br>
-                                Hello World!
+                                Hello, Rafael.
                             </pre> 
-                            <p className='s-paragraph'>
-                                Lembre-se de atentar para os caracteres, pois a saída precisa ser
-                                exatamente igual.
-                           </p>
                            <Link to='/dashboard'> Voltar</Link>
                             
                         </Col>
